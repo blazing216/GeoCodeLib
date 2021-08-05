@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Welcome to GeoCode’s documentation! &mdash; GeoCode 0.1.0 documentation</title>
+  <title>GeoCode &mdash; GeoCode 0.1.0 documentation</title>
   
 
   
@@ -87,7 +87,11 @@
             
               <!-- Local TOC -->
               <div class="local-toc"><ul>
-<li><a class="reference internal" href="#">Welcome to GeoCode’s documentation!</a></li>
+<li><a class="reference internal" href="#">GeoCode</a></li>
+<li><a class="reference internal" href="#examples">Examples</a><ul>
+<li><a class="reference internal" href="#one-bit-normalization">One-bit normalization</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
 </ul>
 </div>
@@ -137,7 +141,7 @@
     
       <li><a href="#" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Welcome to GeoCode’s documentation!</li>
+      <li>GeoCode</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -156,9 +160,25 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="welcome-to-geocode-s-documentation">
-<h1>Welcome to GeoCode’s documentation!<a class="headerlink" href="#welcome-to-geocode-s-documentation" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="geocode">
+<h1>GeoCode<a class="headerlink" href="#geocode" title="Permalink to this headline">¶</a></h1>
+<p>Seismological studies involve intensive coding. Over the years, a large amount of codes have been accumulated. However, they are scattered in the code base of each research group. Some of them are private. It is not easy for newcomers to start a serious seismological research unless they joined a research group that has collected a sufficient group of codes over tens of years.
+Although new algorithms are usually presented clearly in the journal papers, but the basic algorithms they are based on are only briefly mentioned. Implementing the new algorithmms, however, needs implement the basic algorithms as well.</p>
+<p>This project aims to provide a collection of code snippets of the basic algorithms that are buiding blocks for advanced methods.</p>
+<p>We will provide code snippets instead of a program or library because seismological studies usually needs to experiment a group of different methods in different orders.</p>
+</div>
+<div class="section" id="examples">
+<h1>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="one-bit-normalization">
+<h2>One-bit normalization<a class="headerlink" href="#one-bit-normalization" title="Permalink to this headline">¶</a></h2>
+<p>One-bit normalization turns a time series to a series of -1 and 1 (maybe 0 as well?). It is widely used in processing ambient noise data to suppress the large amplitude events while keeping the phase information (add refs? Shapiro?).</p>
+<p>The method turns out to be quite easy to implement. If we use a numpy array <code class="docutils literal notranslate"><span class="pre">data</span></code> to represent the time series, the one-bit processed time series can be obtained by</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">data_onebit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
 <div class="toctree-wrapper compound">
+</div>
 </div>
 </div>
 <div class="section" id="indices-and-tables">

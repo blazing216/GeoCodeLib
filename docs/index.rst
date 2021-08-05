@@ -21,11 +21,12 @@ One-bit normalization
 
 One-bit normalization turns a time series to a series of -1 and 1 (maybe 0 as well?). It is widely used in processing ambient noise data to suppress the large amplitude events while keeping the phase information (add refs? Shapiro?).
 
-The method turns out to be quite easy to implement. If we use a numpy array `data` to represent the time series, the one-bit processed time series can be obtained by
+The method turns out to be quite easy to implement. If we use a numpy array ``data`` to represent the time series, the one-bit processed time series can be obtained by
 
-import numpy as np
-data_onebit = np.sign(data)
+.. code-block:: python3
 
+    import numpy as np
+    data_onebit = np.sign(data)
 
 
 
